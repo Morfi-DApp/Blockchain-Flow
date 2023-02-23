@@ -1,0 +1,19 @@
+{
+  "name": "blockchain-flow",
+  "version": "1.0.0",
+  "description": "Morfi for dreams",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morfi-DApp/Blockchain-Flow.git"
+  },
+  "author": "Noah Naizir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Morfi-DApp/Blockchain-Flow/issues"
+  },
+  "homepage": "https://github.com/Morfi-DApp/Blockchain-Flow#readme"
+}
