@@ -41,7 +41,6 @@ pub contract Morfi: NonFungibleToken {
 		pub let description: String
 		pub let image: MetadataViews.IPFSFile
 		pub let price: UFix64
-		pub var extra: {String: AnyStruct}
 		pub var minted: UInt64
 		pub let purchasers: {UInt64: Address}
 		pub let metadataId: UInt64
@@ -54,13 +53,12 @@ pub contract Morfi: NonFungibleToken {
 			self.minted = self.minted + 1
 		}
 
-		init(_name: String, _description: String, _image: MetadataViews.IPFSFile, _price: UFix64, _extra: {String: AnyStruct}) {
+		init(_name: String, _description: String, _image: MetadataViews.IPFSFile, _price: UFix64) {
 			self.metadataId = Morfi.nextMetadataId
 			self.name = _name
 			self.description = _description
 			self.image = _image
 			self.price = _price
-			self.extra = _extra
 			self.minted = 0
 			self.purchasers = {}
 		}
@@ -145,8 +143,6 @@ pub contract Morfi: NonFungibleToken {
 					return MetadataViews.Serial(
 						self.serial
 					)
-				case Type<MetadataViews.Traits>():
-					return MetadataViews.dictToTraits(dict: self.getMetadata().extra, excludedNames: nil)
 				case Type<MetadataViews.NFTView>():
 					return MetadataViews.NFTView(
 						id: self.id,
@@ -287,7 +283,7 @@ pub contract Morfi: NonFungibleToken {
 	}
 
 	pub resource Administrator {
-		pub fun createNFTMetadata(name: String, description: String, imagePath: String, ipfsCID: String, extra: {String: AnyStruct}) {
+		pub fun createNFTMetadata(name: String, description: String, imagePath: String, ipfsCID: String) {
 			Morfi.metadatas[Morfi.nextMetadataId] = NFTMetadata(
 				_name: name,
 				_description: description,
@@ -295,8 +291,7 @@ pub contract Morfi: NonFungibleToken {
 					cid: ipfsCID,
 					path: imagePath
 				),
-				_price: 1.0,
-				_extra: extra
+				_price: 1.0
 			)
 
 			Morfi.nextMetadataId = Morfi.nextMetadataId + 1

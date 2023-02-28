@@ -4,7 +4,6 @@ transaction(
   name: String,
   description: String,
   image: String,
-  extra: {String: String},
   ipfsCID: String
 ) {
   let Administrator: &Morfi.Administrator
@@ -20,7 +19,6 @@ transaction(
         description: description,
         imagePath: image,
         ipfsCID: ipfsCID,
-        extra: extra,
       )
   }
 }

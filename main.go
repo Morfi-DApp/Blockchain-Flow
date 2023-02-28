@@ -26,7 +26,6 @@ func main() {
 		WithArg("name", `"First Piece"`),
 		WithArg("description", `"I bet that Argentina will win the 2022 World Cup"`),
 		WithArg("image", `"Alex1.png"`),
-		WithArg("extra", `{"String": "Piece Extra Metadata If needed"}`),
 		WithArg("ipfsCID", "ipfs://bafybeihkurbbjxq5v7ag62ahvatrvizmv4tqebzzm26nz6ils4nxgh5ko4"),
 	)
 	color.Green("-----------------------------PASSED---------------------")

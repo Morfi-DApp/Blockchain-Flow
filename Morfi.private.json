@@ -1,0 +1,14 @@
+{
+	"accounts": {
+		"Morfi": {
+			"address": "54879e206dce6b91",
+			"key": {
+				"type": "hex",
+				"index": 0,
+				"signatureAlgorithm": "ECDSA_P256",
+				"hashAlgorithm": "SHA3_256",
+				"privateKey": "3cb0469c67992190ae8be740848dfa6549ceb5f5e35160c01f8c305ab9545958"
+			}
+		}
+	}
+}
